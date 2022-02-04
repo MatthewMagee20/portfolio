@@ -1,0 +1,18 @@
+#projects {
+  scroll-margin-top: 5em;
+
+  .project {
+    border: 1px solid $secondary-variant;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px $secondary-variant;
+
+    .project__title {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

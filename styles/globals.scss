@@ -1,0 +1,229 @@
+@import "./Navbar.scss";
+@import "./variables.scss";
+@import "./project.scss";
+
+:root {
+  font-size: $font-size;
+}
+
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  text-decoration: none;
+}
+
+html,
+body,
+main,
+#__next,
+#content {
+  height: 100%;
+  background-color: $bg;
+  color: $font;
+}
+
+section {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+main {
+  padding: 0 $x-padding;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+p,
+li {
+  font-size: 1.3rem;
+  padding: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.title {
+  color: #03dac6;
+}
+
+.button {
+  padding: 8px 24px;
+  color: $secondary;
+  border: 1px solid $secondary;
+  border-radius: 0.25rem;
+  font-size: 1.3rem;
+  box-shadow: 5px 5px $secondary-variant;
+
+  :focus {
+    background-color: $secondary;
+    color: $font;
+  }
+}
+
+#landing,
+#about {
+  height: 100%;
+  scroll-margin-top: 2em;
+}
+
+// .image-wrapper {
+//   height: 250px;
+//   width: 250px;
+//   justify-self: center;
+// }
+
+// .avatar {
+//   border-radius: 50%;
+//   transform: rotate(-90deg);
+//   transform: scaleX(1);
+//   height: 100%;
+//   box-sizing: border-box;
+//   width: 100%;
+// }
+
+/* About */
+
+.technologies-list li::before {
+  content: "♢";
+  margin-right: 5px;
+  color: $secondary-variant;
+}
+
+/* Contact */
+
+.contact-buttons {
+  display: flex;
+  padding: $x-padding;
+  justify-content: space-around;
+  width: 100%;
+
+  .contact {
+    svg {
+      height: 50px;
+      width: 50px;
+      color: $secondary-variant;
+
+      path {
+        fill: $secondary-variant;
+      }
+    }
+  }
+}
+
+.linkedin {
+  svg {
+    path:nth-child(2) {
+      fill: $bg !important;
+    }
+  }
+}
+
+#projects {
+  li {
+    list-style: none;
+
+    a {
+      color: $secondary-variant;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+@media (min-width: $laptop) {
+  main {
+    padding: 0 calc($x-padding * 4);
+  }
+}
