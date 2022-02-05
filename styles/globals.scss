@@ -11,6 +11,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
 *,
 *::before,
 *::after {
@@ -38,15 +43,11 @@ section {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: 100;
 }
 
 main {
   padding: 0 $x-padding;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 picture,
@@ -80,16 +81,16 @@ h6 {
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 p,
 li {
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 10px 0;
 }
 
@@ -101,6 +102,10 @@ ul {
   color: #03dac6;
 }
 
+.button-wrapper {
+  padding-top: 20px;
+}
+
 .button {
   padding: 8px 24px;
   color: $secondary;
@@ -109,10 +114,18 @@ ul {
   font-size: 1.3rem;
   box-shadow: 5px 5px $secondary-variant;
 
-  :focus {
-    background-color: $secondary;
-    color: $font;
+  &:hover {
+    background-color: $bg-hover;
   }
+
+  &:active {
+    background-color: $secondary-variant;
+    color: $bg;
+  }
+}
+
+#landing {
+  padding-top: 50px;
 }
 
 #landing,
@@ -138,10 +151,24 @@ ul {
 
 /* About */
 
-.technologies-list li::before {
-  content: "♢";
-  margin-right: 5px;
-  color: $secondary-variant;
+.technologies-list {
+  display: flex;
+  padding: 0;
+  width: 100%;
+
+  .left-col {
+    padding-right: 10px;
+  }
+
+  li::before {
+    content: "♢";
+    margin-right: 5px;
+    color: $secondary-variant;
+    :focus {
+      background-color: $secondary;
+      color: $font;
+    }
+  }
 }
 
 /* Contact */
@@ -177,8 +204,20 @@ ul {
   li {
     list-style: none;
 
-    a {
+    .project__title {
       color: $secondary-variant;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 35px;
+      text-decoration: underline;
+
+      .link__icon {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 0;
+      }
     }
   }
 }
@@ -222,8 +261,31 @@ ul {
   -webkit-animation-name: fadeInUp;
 }
 
+@media (max-width: $mobile) {
+  :root {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+  :root {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $laptop) {
+  :root {
+    font-size: 120%;
+  }
+}
+
 @media (min-width: $laptop) {
+  :root {
+    font-size: 140%;
+  }
+
   main {
-    padding: 0 calc($x-padding * 4);
+    padding: 0 calc($x-padding * 10);
+    scroll-margin-top: 0;
   }
 }
