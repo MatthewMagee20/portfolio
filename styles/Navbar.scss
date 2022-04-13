@@ -2,6 +2,7 @@
 
 nav {
   background-color: $primary;
+  position: relative;
   position: fixed;
   top: 0;
   left: 0;
@@ -52,9 +53,10 @@ nav {
     left: 0;
 
     .close__button {
-      padding: 25px $x-padding;
       justify-content: flex-end;
       display: flex;
+      padding-right: 40px;
+      padding-top: 12.5px;
 
       svg {
         height: 30px;
@@ -128,6 +130,7 @@ nav {
   #nav {
     top: 0;
     display: flex;
+    position: relative;
     position: fixed;
     align-items: center;
 

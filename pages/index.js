@@ -60,9 +60,7 @@ const Index = ({ projects }) => {
                       </span>
                       <h2>{title}</h2>
                     </a>
-                    <span className="text-lg tablet:text-2xl">
-                      {previewDescription}
-                    </span>
+                    <span>{previewDescription}</span>
                     <ul className="technologies-list">
                       {technologies.map((a, index) => (
                         <li key={index}>{a}</li>
@@ -85,8 +83,6 @@ export async function getStaticProps() {
     "technologies": technologies[]->title
   }`);
 
-  console.log(projects);
-
   return {
     props: {
       projects,
@@ -96,9 +92,3 @@ export async function getStaticProps() {
 }
 
 export default Index;
-
-// `
-//       *[_type == "project"]{
-//         _id, title, slug, previewDescription, url,
-//         "technologies": *[_type=='technology'].title
-//       }`

@@ -1,10 +1,7 @@
 const Landing = () => {
   return (
-    <section
-      id="landing"
-      className="animated animatedFadeInUp fadeInUp items-start justify-center"
-    >
-      <div>
+    <section id="landing">
+      <div className="container">
         <h2>Hello there! My name is</h2>
         <h1 className="title">Matthew Magee</h1>
         <p>

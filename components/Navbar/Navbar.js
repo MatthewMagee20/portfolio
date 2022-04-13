@@ -8,7 +8,6 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  console.log(isOpen);
   return (
     <nav id="nav">
       <div className="brand">

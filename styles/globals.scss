@@ -9,11 +9,13 @@
 html {
   font-family: "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  height: 100%;
 }
 
 *,
@@ -24,6 +26,7 @@ body {
 
 * {
   margin: 0;
+  padding: 0;
   text-decoration: none;
 }
 
@@ -32,22 +35,30 @@ body,
 main,
 #__next,
 #content {
-  height: 100%;
   background-color: $bg;
   color: $font;
-}
-
-section {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100;
+  height: 100%;
 }
 
 main {
   padding: 0 $x-padding;
+}
+
+section {
+  height: 100%;
+
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+#projects {
+  height: fit-content;
 }
 
 picture,
@@ -128,11 +139,10 @@ ul {
   padding-top: 50px;
 }
 
-#landing,
-#about {
-  height: 100%;
-  scroll-margin-top: 2em;
-}
+// #landing,
+// #about {
+//   scroll-margin-top: 2em;
+// }
 
 // .image-wrapper {
 //   height: 250px;
@@ -261,31 +271,29 @@ ul {
   -webkit-animation-name: fadeInUp;
 }
 
-@media (max-width: $mobile) {
-  :root {
-    font-size: 80%;
-  }
-}
+// @media (max-width: $mobile) {
 
-@media (min-width: $mobile) and (max-width: $tablet) {
-  :root {
-    font-size: 100%;
-  }
-}
+// }
 
-@media (min-width: $tablet) and (max-width: $laptop) {
-  :root {
-    font-size: 120%;
-  }
-}
+// @media (min-width: $mobile) and (max-width: $tablet) {
+//   :root {
+//     font-size: 100%;
+//   }
+// }
 
-@media (min-width: $laptop) {
-  :root {
-    font-size: 140%;
-  }
+// @media (min-width: $tablet) and (max-width: $laptop) {
+//   :root {
+//     font-size: 120%;
+//   }
+// }
 
-  main {
-    padding: 0 calc($x-padding * 10);
-    scroll-margin-top: 0;
-  }
-}
+// @media (min-width: $laptop) {
+//   :root {
+//     font-size: 140%;
+//   }
+
+//   main {
+//     padding: 0 calc($x-padding * 10);
+//     scroll-margin-top: 0;
+//   }
+// }
